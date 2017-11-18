@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Motion, spring } from 'react-motion';
 
 const Container = styled.div`
     width: ${props => props.widthCircle};
@@ -21,9 +22,19 @@ class Task extends React.Component {
     render() {
         let { numberOfCircle } = this.props;
 
-        console.log(this.widthCircle(numberOfCircle));
+        const config = { stiffness: 100, damping: 10 };
+        const toCSS = (scale) => ({ transform: `scale3d(${scale}, ${scale}, ${scale})` })
 
-        return <Container widthCircle={this.widthCircle(numberOfCircle)} />;
+        return(
+            <Motion 
+                defaultStyle={{ scale: 0 }} 
+                style={{ scale: spring(1, config) }}
+            >
+                {
+                    (value) => <Container style={toCSS(value.scale)} widthCircle={this.widthCircle(numberOfCircle)} />
+                }
+            </Motion>
+        )
     }
 }
 
