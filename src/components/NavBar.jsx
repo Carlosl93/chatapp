@@ -12,7 +12,6 @@ const Container = styled.div`
 class NavBar extends React.Component {
     constructor() {
         super();
-
         this.state = { hover: false };
     }
 
@@ -28,12 +27,14 @@ class NavBar extends React.Component {
             <Container>
                 <Motion
                     defaultStyle={{ scale: 0 }}
-                    style={{ scale: spring(1, config) }}
+                    style={{ scale: spring(this.state.hover ? 1.2 : 1, config) }}
                 >
                     {value => (
                         <i
                             className="material-icons"
                             onClick={this.props.addTask}
+                            onMouseEnter={this.onHover}
+                            onMouseLeave={this.onHover}
                             style={toCSS(value.scale)}
                         >
                             add
