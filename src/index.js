@@ -5,14 +5,21 @@ import App from "./App";
 import * as firebase from 'firebase'
 
 //Redux
-import { createStore } from "redux";
+import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
+import thunkMiddleware from 'redux-thunk'
+import { createLogger } from 'redux-logger'
 
 //Reducer
 import chatReducer from "./reducers/index.js";
 import { sendMessage } from "./actions/messages.js";
 
-let store = createStore(chatReducer);
+const logger = createLogger();
+
+const store = createStore(
+    chatReducer,
+    applyMiddleware(thunkMiddleware, createLogger)
+  );
 
 ReactDOM.render(
     <Provider store={store}>

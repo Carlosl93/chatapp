@@ -1,11 +1,13 @@
 import { connect } from 'react-redux';
 
-import { sendMessage as sendMessageAction } from '../actions/messages.js';
+import { 
+    sendMessage as sendMessageAction,
+    listMessages as listMessageAction
+ } from '../actions/messages.js';
 
 import Chat from '../components/Chat.jsx';
 
 const statesMap = state => {
-    console.log('statesMap', state);
     return {
         messages: state.messagesReducer.messages
     }
