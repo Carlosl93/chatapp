@@ -45,19 +45,14 @@ const ChatBox = styled.div`
     overflow: auto;
 `;
 
-const Chat = messagesContainer(
+
     class Chat extends React.Component {
 
-        //Dispatch the message 
-        sendMessage = (message) => {
-            this.props.message({
-                message
-            });
-        };
+        componentDidMount() {
+            this.props.listMessages();
+        }
 
         render() {
-            console.log('chat', this.props);
-
             return (
                 <Container>
                     <NavBar addTask={() => this.addTask()} />
@@ -79,6 +74,10 @@ const Chat = messagesContainer(
             );
         }
     }
-);
+
 
 export default Chat;
+
+/*
+
+*/

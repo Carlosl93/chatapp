@@ -1,21 +1,18 @@
 import database from '../firebase.js';
 
-export const sendMessage = (data) => ({
-    type: 'SEND_MESSAGE',
-    data
-});
-
-export const receiveMessages = (data) => ({
-    type: 'RECEIVE_MESSAGES',
-    data
-});
+export const receiveMessages = (data) => {
+    return {
+        type: 'RECEIVE_MESSAGES',
+        data
+    }
+};
 
 export const listMessages = () => {
     return dispatch => {
-        return database.ref("/messages").once("messages", snap => {
+        return database.ref("/messages").once("value", snap => {
             const data = snap.val();
-            dispatch(receiveMessages(data))
-            console.log(data);
+            console.log('listMessages', data);
+            dispatch( receiveMessages(data) );
         })
     }
-}
+};

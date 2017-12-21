@@ -7,18 +7,18 @@ import * as firebase from 'firebase'
 //Redux
 import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
-import thunkMiddleware from 'redux-thunk'
-import { createLogger } from 'redux-logger'
+import thunkMiddleware from 'redux-thunk';
+import { createLogger } from 'redux-logger';
 
 //Reducer
 import chatReducer from "./reducers/index.js";
 import { sendMessage } from "./actions/messages.js";
 
-const logger = createLogger();
+const appLogger = createLogger();
 
 const store = createStore(
     chatReducer,
-    applyMiddleware(thunkMiddleware, createLogger)
+    applyMiddleware(appLogger, thunkMiddleware)
   );
 
 ReactDOM.render(

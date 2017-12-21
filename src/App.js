@@ -4,6 +4,8 @@ import styled from 'styled-components';
 //Components
 import SignUp from './components/SignUp.jsx';
 import Chat from './components/Chat.jsx';
+
+import messagesContainer from './containers/messagesContainer.js';
   
 const Container = styled.div`
   width: 100%;
@@ -11,15 +13,17 @@ const Container = styled.div`
   display: flex;
   justify-content: center
 `;
-
-class App extends React.Component {
-  render() {
-    return (
-      <Container>
-        <Chat />  
-      </Container>
-    );
+const App = messagesContainer(
+  class App extends React.Component {
+    render() {
+      console.log('app', this.props);
+      return (
+        <Container>
+          <Chat {...this.props}/>  
+        </Container>
+      );
+    }
   }
-}
+)
 
 export default App;
