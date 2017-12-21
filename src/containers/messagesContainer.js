@@ -1,7 +1,8 @@
 import { connect } from 'react-redux';
 
 import { 
-    listMessages as listMessageAction
+    listMessages as listMessageAction,
+    sendMessage as sendMessageAction
  } from '../actions/messages.js';
 
 import Chat from '../components/Chat.jsx';
@@ -15,7 +16,8 @@ const statesMap = state => {
 
 const dispatches = dispatch => {
     return {
-        listMessages: () => dispatch( listMessageAction() )
+        listMessages: () => dispatch( listMessageAction() ),
+        sendMessage: (message) => dispatch( sendMessageAction(message) )
     }
 };
 

@@ -53,6 +53,9 @@ const ChatBox = styled.div`
         }
 
         render() {
+
+            const { sendMessage } = this.props;
+
             return (
                 <Container>
                     <NavBar addTask={() => this.addTask()} />
@@ -67,7 +70,7 @@ const ChatBox = styled.div`
                             ))}
                         </ChatBox>
                         <ChatSend 
-                            sendMessage={this.sendMessage}
+                            {...this.props}
                         />
                     </Box>
                 </Container>

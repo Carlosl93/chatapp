@@ -66,21 +66,21 @@ class ChatSend extends React.Component {
 
     //Change on the input value 
     onChange = (e) => {
-        console.log(this.state);
         this.setState({
           value: e.target.value,
         })
+        console.log(this.state.value);
       };
 
     //On Submit 
     handleSubmit = (e) => {
         e.preventDefault();
-
-        this.props.sendMessage(this.state.value);
-        console.log('funcionsendmessage', this.props.sendMessage); 
+        console.log(this.state.value);
+        this.props.sendMessage( this.state.value );
         this.setState({
             value: ""
         });
+        this.props.listMessages();
     };
 
     render() {
