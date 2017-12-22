@@ -5,7 +5,7 @@ import {
     sendMessage as sendMessageAction
  } from '../actions/messages.js';
 
-import Chat from '../components/Chat.jsx';
+import Chat from '../components/ChatRoom/Chat.jsx';
 
 const statesMap = state => {
     console.log(state);

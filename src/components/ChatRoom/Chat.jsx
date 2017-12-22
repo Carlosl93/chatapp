@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import messagesContainer from '../containers/messagesContainer.js';
+import messagesContainer from '../../containers/messagesContainer.js';
 
 import ChatElement from "./ChatElement.jsx";
-import NavBar from "./NavBar.jsx";
+import NavBar from "./../NavBar.jsx";
 import ChatSend from "./ChatSend.jsx";
 
 const Container = styled.div`

@@ -2,18 +2,19 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
-    width: 100%; 
+    width: 100%;
     height: 100%;
-    padding: 10% 0px;
+    padding-top: 2%;
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: auto;
 `;
 
 const Box = styled.div`
-    width: 700px;
-    height: 500px;
-    border: 2px  solid #ff77a9;
+    width: 600px;
+    height: 900px;
+    border: 4px solid #ff77a9;
     border-radius: 12px;
     display: flex;
     flex-direction: column;
@@ -21,19 +22,29 @@ const Box = styled.div`
     justify-content: center;
 `;
 
-const Profile = styled.div`
-    width: 120px; height: 120px;
-    border-radius: 50%;
-    border: 2px solid #ff77a9;
-    box-shadow: #c9b2ba 0px 2px 6px 0px;
-    margin-bottom: 60px;
+const Message = styled.div`
+    color: #ff77a9;
+    font-size: 48px;
+    font-weight: 500;
+    margin-bottom: 200px;
 `;
 
-const Button = styled.div`
+const Letter = styled.span`
+    color: #ff77a9;
+    font-size: 56px;
+    font-weight: 700;
+    margin-bottom: 200px;
+`;
+
+const FormContainer = styled.form`
+    margin-top: -5rem;
+`;
+
+const Input = styled.input`
     margin: 10px;
     width: 300px;
     height: 50px;
-    border: 2px solid #ff77a9;
+    border: 4px solid #ff77a9;
     border-radius: 12px;
     color: #ff77a9;
     font-weight: 500;
@@ -44,12 +55,22 @@ const Button = styled.div`
     transition: all 0.3s ease;
     box-shadow: #c9b2ba 0px 2px 6px 0px;
     cursor: pointer;
+    background: transparent;
+    padding: 0px 10px;
 
-    :hover{
+    :focus{
         transform: translateY(-4px);
         box-shadow: #c9b2ba 0px 4px 8px 0px;
         transition: all 0.2s ease;
+        outline: 0;
     }
+`;
+
+const InputName = styled.p`
+    color: #ff77a9;
+    font-size: 24px;
+    padding-left: 30px;
+    margin-bottom: -10px;
 `;
 
 class SignUp extends React.Component{
@@ -57,14 +78,15 @@ class SignUp extends React.Component{
         return(
             <Container>
                 <Box>
-                    <Profile>                        
-                    </Profile>
-                    <Button>
-                        Sign Up
-                    </Button>    
-                    <Button>   
-                        Log In
-                    </Button>     
+                    <Message>
+                        <Letter>W</Letter>elcome <Letter>B</Letter>ack !
+                    </Message>      
+                    <FormContainer>          
+                        <InputName>Username</InputName>
+                        <Input type="text"/>    
+                        <InputName>Password</InputName>
+                        <Input type="password"/>        
+                    </FormContainer>
                 </Box>
             </Container>
         );

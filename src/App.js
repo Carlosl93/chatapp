@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 //Components
 import SignUp from './components/SignUp.jsx';
-import Chat from './components/Chat.jsx';
+import Chat from './components/ChatRoom/Chat.jsx';
 
 import messagesContainer from './containers/messagesContainer.js';
   
@@ -11,15 +11,15 @@ const Container = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
-  justify-content: center
+  justify-content: center;
 `;
+
 const App = messagesContainer(
   class App extends React.Component {
     render() {
-      console.log('app', this.props);
       return (
         <Container>
-          <Chat {...this.props}/>  
+          <SignUp {...this.props}/>  
         </Container>
       );
     }
