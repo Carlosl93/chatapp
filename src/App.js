@@ -2,7 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 //Components
-import SignUp from './components/SignUp.jsx';
+import ChatList from './components/ChatList/ChatList.jsx';
+import SignUp from './components/Login/SignUp.jsx';
 import Chat from './components/ChatRoom/Chat.jsx';
 
 import messagesContainer from './containers/messagesContainer.js';
@@ -19,7 +20,7 @@ const App = messagesContainer(
     render() {
       return (
         <Container>
-          <SignUp {...this.props}/>  
+          <ChatList {...this.props}/>  
         </Container>
       );
     }

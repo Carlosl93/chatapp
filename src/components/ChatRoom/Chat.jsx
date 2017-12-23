@@ -47,13 +47,12 @@ const ChatBox = styled.div`
 
 
     class Chat extends React.Component {
-
+        
         componentDidMount() {
             this.props.listMessages();
         }
 
         render() {
-
             const { sendMessage } = this.props;
 
             return (
