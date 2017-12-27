@@ -37,8 +37,9 @@ const ChatBox = styled.div`
     width: 100%;
     height: 740px;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
     align-items: center;
     overflow: auto;
 `;
@@ -55,7 +56,7 @@ const ChatBottom = styled.form`
 const CenteredTextBox = styled.div`
     display: flex;
     justify-content: center;
-    align-items: center;
+    flex-wrap: wrap;    
     width: 100%;
     margin: -8px 0px;
     color: #ff77a9;
@@ -81,9 +82,12 @@ class ChatList extends React.Component{
                     </ChatHeader>
 
                     <ChatBox>
-                        <RoomBox />
-                        <RoomBox />
-                        <RoomBox />
+                        <RoomBox totalFloaters={108} floaters={38} roomName={"Pizza"}/>
+                        <RoomBox totalFloaters={108} floaters={16} roomName={"Chicken"}/>
+                        <RoomBox totalFloaters={108} floaters={16} roomName={"Talking"}/>
+                        <RoomBox totalFloaters={108} floaters={10} roomName={"COD"}/>
+                        <RoomBox totalFloaters={108} floaters={8} roomName={"Festival"}/>
+                        <RoomBox totalFloaters={108} floaters={8} roomName={"Rock"}/>                    
                     </ChatBox> 
 
                     <ChatBottom /> 
